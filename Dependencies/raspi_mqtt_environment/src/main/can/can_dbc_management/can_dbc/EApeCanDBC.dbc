@@ -1,0 +1,307 @@
+VERSION ""
+
+
+NS_ :
+    NS_DESC_
+    CM_
+    BA_DEF_
+    BA_
+    VAL_
+    CAT_DEF_
+    CAT_
+    FILTER
+    BA_DEF_DEF_
+    EV_DATA_
+    ENVVAR_DATA_
+    SGTYPE_
+    SGTYPE_VAL_
+    BA_DEF_SGTYPE_
+    BA_SGTYPE_
+    SIG_TYPE_REF_
+    VAL_TABLE_
+    SIG_GROUP_
+    SIG_VALTYPE_
+    SIGTYPE_VALTYPE_
+    BO_TX_BU_
+    BA_DEF_REL_
+    BA_REL_
+    BA_DEF_DEF_REL_
+    BU_SG_REL_
+    BU_EV_REL_
+    BU_BO_REL_
+    SG_MUL_VAL_
+
+BS_:
+BU_:
+
+BO_ 2559574336 REQ_SOC: 8 Vector__XXX
+   SG_ Reserved : 0|63@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 2559639872 REQ_VOLTS: 8 Vector__XXX
+   SG_ Reserved : 0|63@1+ (0,0) [0|0] "" Vector__XXX
+
+BO_ 2559705408 REQ_TEMPS: 8 Vector__XXX
+   SG_ Reserved : 0|63@1+ (0,0) [0|0] "" Vector__XXX
+
+BO_ 2559770944 REQ_MOS_STATUS: 8 Vector__XXX
+   SG_ Reserved : 0|63@1+ (0,0) [0|0] "" Vector__XXX
+
+BO_ 2559836480 REQ_STATUS_INFO: 8 Vector__XXX
+   SG_ Reserved : 0|63@1+ (0,0) [0|0] "" Vector__XXX
+
+BO_ 2559902016 REQ_CELL_VOLTAGES: 8 Vector__XXX
+   SG_ Reserved : 0|63@1+ (0,0) [0|0] "" Vector__XXX
+
+BO_ 2559967552 REQ_CELL_TEMPS: 8 Vector__XXX
+   SG_ Reserved : 0|63@1+ (0,0) [0|0] "" Vector__XXX
+
+BO_ 2560033088 REQ_BALANCE_STATE: 8 Vector__XXX
+   SG_ Reserved : 0|63@1+ (0,0) [0|0] "" Vector__XXX
+
+BO_ 2560098624 REQ_BAT_FAIL_STATUS: 8 Vector__XXX
+   SG_ Reserved : 0|63@1+ (0,0) [0|0] "" Vector__XXX
+
+BO_ 2559590401 SOC: 8 Vector__XXX
+   SG_ pressure : 0|16@1+ (0.1,0) [0|1] "V" Vector__XXX
+   SG_ tot_pressure : 16|16@1+ (0.1,0) [0|1] "V" Vector__XXX
+   SG_ current : 32|16@1+ (0.1,30000) [0|1] "A" Vector__XXX
+   SG_ SOC : 48|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+
+BO_ 2559655937 VOLTS: 8 Vector__XXX
+   SG_ max_volt_val : 0|16@1+ (0,0) [0|0] "mV" Vector__XXX
+   SG_ num_cells_max_volt : 16|16@1+ (0,0) [0|0] "mV" Vector__XXX
+   SG_ min_volt_val : 32|16@1+ (0,0) [0|0] "mV" Vector__XXX
+   SG_ num_cells_min_volt : 48|16@1+ (0,0) [0|0] "mV" Vector__XXX
+
+BO_ 2559721473 TEMPS: 8 Vector__XXX
+   SG_ max_temp_val : 0|16@1+ (1,40) [0|0] "°C" Vector__XXX
+   SG_ num_cells_max_temp : 16|16@1+ (0,0) [0|1] "mV" Vector__XXX
+   SG_ min_temp_val : 32|16@1+ (1,40) [0|0] "°C" Vector__XXX
+   SG_ num_cells_min_temp : 48|16@1+ (0,0) [0|1] "mV" Vector__XXX
+
+BO_ 2559787009 MOS_STATUS: 8 Vector__XXX
+   SG_ state : 0|8@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ charge_mos_state : 8|8@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ discharge_mos_state : 16|8@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ BMS_life : 24|8@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ remaining_capacity : 32|32@1+ (0,0) [0|0] "mAH" Vector__XXX
+
+BO_ 2559852545 STATUS_INFO: 8 Vector__XXX
+   SG_ num_bats_str : 0|8@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ num_temps : 8|8@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ charger_status : 16|8@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ load_status : 24|8@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ di1_state : 32|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ di2_state : 33|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ di3_state : 34|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ di4_state : 35|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ do1_state : 36|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ do2_state : 37|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ do3_state : 38|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ do4_state : 39|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ reserved : 40|1@24+ (0,0) [0|0] "" Vector__XXX
+
+BO_ 2559918081 CELL_VOLTAGES: 8 Vector__XXX
+   SG_ frame_num : 0|8@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ V1 : 8|16@1+ (0,0) [1000|4000] "mV" Vector__XXX
+   SG_ V2 : 24|16@1+ (0,0) [0|0] "mV" Vector__XXX
+   SG_ V3 : 40|16@1+ (0,0) [0|0] "mV" Vector__XXX
+   SG_ reserved : 56|8@1+ (0,0) [0|0] "" Vector__XXX
+
+BO_ 2559983617 CELL_TEMPS: 8 Vector__XXX
+   SG_ frame_num : 0|8@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ T1 : 8|8@1+ (0,40) [0|0] "°C" Vector__XXX
+   SG_ T2 : 16|8@1+ (0,40) [0|0] "°C" Vector__XXX
+   SG_ T3 : 24|8@1+ (0,40) [0|0] "°C" Vector__XXX
+   SG_ T4 : 32|8@1+ (0,40) [0|0] "°C" Vector__XXX
+   SG_ T5 : 40|8@1+ (0,40) [0|0] "°C" Vector__XXX
+   SG_ T6 : 48|8@1+ (0,40) [0|0] "°C" Vector__XXX
+   SG_ T7 : 56|8@1+ (0,40) [0|0] "°C" Vector__XXX
+
+BO_ 2560049153 REQ_BALANCE: 8 Vector__XXX
+   SG_ cell_1 : 0|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_2 : 1|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_3 : 2|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_4 : 3|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_5 : 4|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_6 : 5|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_7 : 6|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_8 : 7|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_9 : 8|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_10 : 9|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_11 : 10|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_12 : 11|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_13 : 12|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_14 : 13|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_15 : 14|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_16 : 15|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_17 : 16|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_18 : 17|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_19 : 18|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_20 : 19|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_21 : 20|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_22 : 21|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_23 : 22|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_24 : 23|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_25 : 24|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_26 : 25|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_27 : 26|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_28 : 27|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_29 : 28|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_30 : 29|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_31 : 30|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_32 : 31|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_33 : 32|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_34 : 33|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_35 : 34|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_36 : 35|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_37 : 36|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_38 : 37|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_39 : 38|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_40 : 39|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_41 : 40|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_42 : 41|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_43 : 42|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_44 : 43|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_45 : 44|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_46 : 45|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_47 : 46|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ cell_48 : 47|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ reserved : 48|16@1+ (0,0) [0|0] "" Vector__XXX
+
+BO_ 2560114689 BAT_FAIL_STATUS: 8 Vector__XXX
+   SG_ Flag_0_0 : 0|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_0_1 : 1|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_0_2 : 2|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_0_3 : 3|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_0_4 : 4|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_0_5 : 5|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_0_6 : 6|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_0_7 : 7|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_1_0 : 8|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_1_1 : 9|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_1_2 : 10|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_1_3 : 11|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_1_4 : 12|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_1_5 : 13|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_1_6 : 14|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_1_7 : 15|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_2_0 : 16|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_2_1 : 17|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_2_2 : 18|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_2_3 : 19|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_2_4 : 20|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_2_5 : 21|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_2_6 : 22|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_2_7 : 23|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_3_0 : 24|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_3_1 : 25|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_3_2 : 26|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_3_3 : 27|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Reserved_1 : 28|4@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_4_0 : 32|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_4_1 : 33|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_4_2 : 34|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_4_3 : 35|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_4_4 : 36|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_4_5 : 37|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_4_6 : 38|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_4_7 : 39|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_5_0 : 40|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_5_1 : 41|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_5_2 : 42|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_5_3 : 43|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_5_4 : 44|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_5_5 : 45|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_5_6 : 46|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_5_7 : 47|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_6_0 : 48|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_6_1 : 49|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_6_2 : 50|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_6_3 : 51|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Flag_6_4 : 52|1@1+ (0,0) [0|0] "" Vector__XXX
+   SG_ Reserved_2 : 53|11@1+ (0,0) [0|0] "" Vector__XXX
+
+BA_DEF_ SG_ "SPN" INT 0 524287;
+BA_DEF_ BO_ "VFrameFormat" ENUM "StandardCAN","ExtendedCAN","reserved","J1939PG";
+BA_DEF_ "DatabaseVersion" STRING ;
+BA_DEF_ "BusType" STRING ;
+BA_DEF_ "ProtocolType" STRING ;
+BA_DEF_ "DatabaseCompiler" STRING ;
+BA_DEF_ BO_ "GenMsgBackgroundColor" STRING ;
+BA_DEF_ BO_ "GenMsgForegroundColor" STRING ;
+BA_DEF_ BO_ "matchingcriteria" INT 0 0;
+BA_DEF_ BO_ "filterlabeling" INT 0 0;
+BA_DEF_ BO_ "matchingcriteria" INT 0 0;
+BA_DEF_ BO_ "filterlabeling" INT 0 0;
+BA_DEF_ BO_ "matchingcriteria" INT 0 0;
+BA_DEF_ BO_ "filterlabeling" INT 0 0;
+BA_DEF_ BO_ "matchingcriteria" INT 0 0;
+BA_DEF_ BO_ "filterlabeling" INT 0 0;
+BA_DEF_DEF_ "SPN" 0;
+BA_DEF_DEF_ "VFrameFormat" "J1939PG";
+BA_DEF_DEF_ "DatabaseVersion" "DEMO";
+BA_DEF_DEF_ "BusType" "";
+BA_DEF_DEF_ "ProtocolType" "";
+BA_DEF_DEF_ "DatabaseCompiler" "";
+BA_DEF_DEF_ "GenMsgBackgroundColor" "#ffffff";
+BA_DEF_DEF_ "GenMsgForegroundColor" "#232629";
+BA_DEF_DEF_ "matchingcriteria" 0;
+BA_DEF_DEF_ "filterlabeling" 0;
+BA_DEF_DEF_ "matchingcriteria" 0;
+BA_DEF_DEF_ "filterlabeling" 0;
+BA_ "GenMsgForegroundColor" BO_ 2559574336 "#000000";
+BA_ "GenMsgForegroundColor" BO_ 2559590401 "#000000";
+
+
+CM_ SG_ 2560114689 Flag_0_0 "single voltage over a higher alarm";
+CM_ SG_ 2560114689 Flag_0_1 "Unit Voltage Over Grade 2 Alarm";
+CM_ SG_ 2560114689 Flag_0_2 "Single Voltage Low Level Alarm";
+CM_ SG_ 2560114689 Flag_0_3 "secondary alarm with low voltage";
+CM_ SG_ 2560114689 Flag_0_4 "over a high level alarm";
+CM_ SG_ 2560114689 Flag_0_5 "total pressure over Grade 2 alarm";
+CM_ SG_ 2560114689 Flag_0_6 "Total Pressure Low Level Alarm";
+CM_ SG_ 2560114689 Flag_0_7 "Total Pressure Low Level 2 Alarm";
+CM_ SG_ 2560114689 Flag_1_0 "charging temperature is too high alarm";
+CM_ SG_ 2560114689 Flag_1_1 "Charge Temperature over Grade 2 Alarm";
+CM_ SG_ 2560114689 Flag_1_2 "charging temperature is too low";
+CM_ SG_ 2560114689 Flag_1_3 "charging temperature is too low";
+CM_ SG_ 2560114689 Flag_1_4 "discharge temperature is too high alarm";
+CM_ SG_ 2560114689 Flag_1_5 "discharge temperature over Grade 2 alarm";
+CM_ SG_ 2560114689 Flag_1_6 "discharge temperature is too low";
+CM_ SG_ 2560114689 Flag_1_7 "discharge temperature is too low";
+CM_ SG_ 2560114689 Flag_2_0 "Charge Overflow Level 1 Alarm";
+CM_ SG_ 2560114689 Flag_2_1 "charging overcurrent secondary alarm";
+CM_ SG_ 2560114689 Flag_2_2 "discharge over-current alarm";
+CM_ SG_ 2560114689 Flag_2_3 "discharge overcurrent secondary alarm";
+CM_ SG_ 2560114689 Flag_2_4 "SOC higher alarm";
+CM_ SG_ 2560114689 Flag_2_5 "SOC Grade Two Alarm";
+CM_ SG_ 2560114689 Flag_2_6 "SOC low level alarm";
+CM_ SG_ 2560114689 Flag_2_7 "SOC Low Level 2 Alarm";
+CM_ SG_ 2560114689 Flag_3_0 "excessive differential pressure";
+CM_ SG_ 2560114689 Flag_3_1 "pressure difference over sophomore alarm";
+CM_ SG_ 2560114689 Flag_3_2 "excessive temperature difference";
+CM_ SG_ 2560114689 Flag_3_3 "pressure difference over sophomore alarm";
+CM_ SG_ 2560114689 Reserved_1 "Reserved";
+CM_ SG_ 2560114689 Flag_4_0 "charging MOS overtemperature warning";
+CM_ SG_ 2560114689 Flag_4_1 "discharge MOS overtemperature warning";
+CM_ SG_ 2560114689 Flag_4_2 "charging MOS temperature detection sensor malfunction";
+CM_ SG_ 2560114689 Flag_4_3 "discharge MOS temperature detection sensor fault";
+CM_ SG_ 2560114689 Flag_4_4 "charging MOS adhesion failure";
+CM_ SG_ 2560114689 Flag_4_5 "discharge MOS adhesion failure";
+CM_ SG_ 2560114689 Flag_4_6 "charging MOS breaking fault";
+CM_ SG_ 2560114689 Flag_4_7 "discharge MOS circuit failure";
+CM_ SG_ 2560114689 Flag_5_0 "AFE Acquisition Chip Fault";
+CM_ SG_ 2560114689 Flag_5_1 "monomer collection drop line";
+CM_ SG_ 2560114689 Flag_5_2 "Monomer Temperature Sensor Fault";
+CM_ SG_ 2560114689 Flag_5_3 "EEPROM storage failures";
+CM_ SG_ 2560114689 Flag_5_4 "RTC clock malfunction";
+CM_ SG_ 2560114689 Flag_5_5 "precharge failure";
+CM_ SG_ 2560114689 Flag_5_6 "Vehicle Communication Failure";
+CM_ SG_ 2560114689 Flag_5_7 "intranet communication module";
+CM_ SG_ 2560114689 Flag_6_0 "Current Module Failure";
+CM_ SG_ 2560114689 Flag_6_1 "Total Voltage Detection Module";
+CM_ SG_ 2560114689 Flag_6_2 "short circuit protection fault";
+CM_ SG_ 2560114689 Flag_6_3 "low voltage no charge fault";
+CM_ SG_ 2560114689 Flag_6_4 "GPS or soft switch";
+CM_ SG_ 2560114689 Reserved_2 "Reserved";

@@ -1,0 +1,74 @@
+{
+  "2559574336": {
+    "topic": "/req_soc",
+    "description": ""
+  },
+  "2559639872": {
+    "topic": "/req_volts",
+    "description": ""
+  },
+  "2559705408": {
+    "topic": "/req_temps",
+    "description": ""
+  },
+  "2559770944": {
+    "topic": "/req_mos_status",
+    "description": ""
+  },
+  "2559836480": {
+    "topic": "/req_status_info",
+    "description": ""
+  },
+  "2559902016": {
+    "topic": "/req_cell_voltages",
+    "description": ""
+  },
+  "2559967552": {
+    "topic": "/req_cell_temps",
+    "description": ""
+  },
+  "2560033088": {
+    "topic": "/req_balance_state",
+    "description": ""
+  },
+  "2560098624": {
+    "topic": "/req_bat_fail_status",
+    "description": ""
+  },
+  "2559590401": {
+    "topic": "/soc",
+    "description": ""
+  },
+  "2559655937": {
+    "topic": "/volts",
+    "description": ""
+  },
+  "2559721473": {
+    "topic": "/temps",
+    "description": ""
+  },
+  "2559787009": {
+    "topic": "/mos_status",
+    "description": ""
+  },
+  "2559852545": {
+    "topic": "/status_info",
+    "description": ""
+  },
+  "2559918081": {
+    "topic": "/cell_voltages",
+    "description": ""
+  },
+  "2559983617": {
+    "topic": "/cell_temps",
+    "description": ""
+  },
+  "2560049153": {
+    "topic": "/req_balance",
+    "description": ""
+  },
+  "2560114689": {
+    "topic": "/bat_fail_status",
+    "description": ""
+  }
+}
