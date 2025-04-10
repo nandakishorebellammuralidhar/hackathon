@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,11 +20,11 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -41,6 +42,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.nanda.drivemate.ui.theme.DrivemateTheme
 import kotlinx.coroutines.delay
 import java.text.SimpleDateFormat
@@ -54,25 +56,59 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             DrivemateTheme {
-                Scaffold(
-                    bottomBar = { BottomBar() }
-                ) { innerPadding ->
-                    Box(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(innerPadding),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text("Your main content here")
-                    }
-                }
+                MainScreen()
             }
         }
     }
 }
 
 @Composable
-fun BottomBar(moveUpPixels: Dp = 50.dp, updateIntervalMillis: Long = 3000) {
+fun MainScreen() {
+    var selectedGraph by remember { mutableStateOf<String?>(null) }
+
+    Column(modifier = Modifier.fillMaxSize()) {
+        // Top part: Graph display area
+        Surface(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(200.dp), // Adjust height as needed
+            color = MaterialTheme.colorScheme.surfaceVariant
+        ) {
+            if (selectedGraph != null) {
+                Box(modifier = Modifier.fillMaxSize()) {
+                    GraphContent(title = "$selectedGraph Graph") // Your graph content
+                    IconButton(
+                        onClick = { selectedGraph = null },
+                        modifier = Modifier.align(Alignment.TopEnd)
+                    ) {
+                        Icon(Icons.Filled.Close, contentDescription = "Close Graph")
+                    }
+                }
+            } else {
+                Box(contentAlignment = Alignment.Center) {
+                    Text("Select a graph below")
+                }
+            }
+        }
+        // Bottom part: Bottom Bar
+        BottomBar(onGraphSelected = { selectedGraph = it })
+    }
+}
+
+@Composable
+fun GraphContent(title: String) {
+    // Replace this with your actual graph drawing composable
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        Text("Graph for $title")
+    }
+}
+
+@Composable
+fun BottomBar(
+    moveUpPixels: Dp = 50.dp,
+    updateIntervalMillis: Long = 3000,
+    onGraphSelected: (String?) -> Unit
+) {
     var currentTime by remember { mutableStateOf(getCurrentTime()) }
     var co2Level by remember { mutableStateOf(700) }
     var temperature by remember { mutableStateOf(7.3f) }
@@ -112,21 +148,21 @@ fun BottomBar(moveUpPixels: Dp = 50.dp, updateIntervalMillis: Long = 3000) {
                     topText = "CO2",
                     bottomText = getCO2String(co2Level),
                     sizeType = 1,
-                    onClickIndex = 1
+                    onClick = { onGraphSelected("CO2") }
                 )
                 Spacer(modifier = Modifier.width(8.dp))
                 ButtonWithText(
                     topText = "Temperature",
                     bottomText = "%.1f°".format(temperature),
                     sizeType = 2,
-                    onClickIndex = 2
+                    onClick = { onGraphSelected("Temperature") }
                 )
                 Spacer(modifier = Modifier.width(8.dp))
                 ButtonWithText(
                     topText = "Battery",
                     bottomText = "$batteryLevel%",
                     sizeType = 2,
-                    onClickIndex = 3
+                    onClick = { onGraphSelected("Battery") }
                 )
             }
 
@@ -141,7 +177,7 @@ fun BottomBar(moveUpPixels: Dp = 50.dp, updateIntervalMillis: Long = 3000) {
 
                 Button(
                     onClick = { /*TODO*/ },
-                    modifier = Modifier.size(width = screenWidthDp*2/5, height = 60.dp),
+                    modifier = Modifier.size(width = screenWidthDp * 2 / 5, height = 60.dp),
                     shape = RoundedCornerShape(8.dp)
                 ) {
                     Text("Button Text")
@@ -155,7 +191,12 @@ fun BottomBar(moveUpPixels: Dp = 50.dp, updateIntervalMillis: Long = 3000) {
 }
 
 @Composable
-fun ButtonWithText(topText: String, bottomText: String, sizeType: Int, onClickIndex: Int) {
+fun ButtonWithText(
+    topText: String,
+    bottomText: String,
+    sizeType: Int,
+    onClick: () -> Unit
+) {
     val configuration = LocalConfiguration.current
     val screenWidthDp = configuration.screenWidthDp.dp
     val buttonWidth: Dp = if (sizeType == 1) {
@@ -163,16 +204,16 @@ fun ButtonWithText(topText: String, bottomText: String, sizeType: Int, onClickIn
     } else {
         screenWidthDp / 5
     }
-    val bottomTextStyle: TextStyle = if(onClickIndex == 1){
-        MaterialTheme.typography.titleSmall
-    } else {
-        MaterialTheme.typography.titleMedium
-    }
+    val bottomTextStyle: TextStyle = TextStyle(
+        fontSize = 10.sp,
+        textAlign = TextAlign.Center,
+    )
 
     Button(
-        onClick = { /*TODO*/ },
+        onClick = onClick,
         modifier = Modifier.size(width = buttonWidth, height = 60.dp),
-        shape = RoundedCornerShape(8.dp)
+        shape = RoundedCornerShape(8.dp),
+        contentPadding = PaddingValues(0.dp)
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -181,49 +222,25 @@ fun ButtonWithText(topText: String, bottomText: String, sizeType: Int, onClickIn
             Text(
                 text = topText,
                 style = MaterialTheme.typography.bodySmall,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                maxLines = 1,
+                overflow = TextOverflow.Visible
             )
             Text(
                 text = bottomText,
                 style = bottomTextStyle,
                 maxLines = 1,
                 textAlign = TextAlign.Center,
-                overflow = TextOverflow.Visible
+                overflow = TextOverflow.Visible,
+                softWrap = true
             )
         }
     }
 }
 
 fun getCO2String(co2Level: Int): String {
-    return co2Level.toString() +"ppm"
+    return co2Level.toString() + "ppm"
 }
-
-
-
-//@Composable
-//fun ButtonWithText(topText: String, bottomText: String) {
-//    Button(
-//        onClick = { /*TODO*/ },
-//        modifier = Modifier.size(width = 80.dp, height = 60.dp),
-//        shape = RoundedCornerShape(8.dp)
-//    ) {
-//        Column(
-//            horizontalAlignment = Alignment.CenterHorizontally,
-//            verticalArrangement = Arrangement.Center
-//        ) {
-//            Text(
-//                text = topText,
-//                style = MaterialTheme.typography.bodySmall,
-//                textAlign = TextAlign.Center
-//            )
-//            Text(
-//                text = bottomText,
-//                style = MaterialTheme.typography.titleMedium,
-//                textAlign = TextAlign.Center
-//            )
-//        }
-//    }
-//}
 
 fun getCurrentTime(): String {
     val sdf = SimpleDateFormat("HH:mm", Locale.getDefault())
@@ -234,6 +251,6 @@ fun getCurrentTime(): String {
 @Composable
 fun DefaultPreview() {
     DrivemateTheme {
-        BottomBar()
+        MainScreen()
     }
 }
