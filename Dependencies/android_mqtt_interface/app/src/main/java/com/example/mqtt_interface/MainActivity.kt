@@ -36,6 +36,7 @@ import com.example.mqtt_interface.screens.CameraTestScreen
 import com.example.mqtt_interface.screens.LedTestScreen
 import com.example.mqtt_interface.screens.StartSpeechToTextRecording
 import com.example.mqtt_interface.screens.TestAppMqttMessenger
+import com.example.mqtt_interface.screens.TextToSpeechScreen
 
 class StartTestApp : ComponentActivity() {
 
@@ -43,7 +44,7 @@ class StartTestApp : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ActivityCompat.requestPermissions(
-            this, arrayOf(Manifest.permission.RECORD_AUDIO), 0
+            this, arrayOf(Manifest.permission.RECORD_AUDIO, Manifest.permission.CAMERA), 0
         )
         setContent {
             AppNavigation(applicationContext)
@@ -127,6 +128,23 @@ fun MainScreen(navController: NavController) {
                 .padding(8.dp)
                 .width(350.dp),
             onClick = {
+                navController.navigate("textToSpeech")
+            }
+        ) {
+            Text(
+                text = "Text to Speech",
+                fontSize = 25.sp,
+                fontWeight = FontWeight.Bold
+            )
+        }
+
+        Button(
+            colors = ButtonDefaults.buttonColors(Color.Gray),
+            shape = RoundedCornerShape(16.dp),
+            modifier = Modifier
+                .padding(8.dp)
+                .width(350.dp),
+            onClick = {
                 navController.navigate("cameraTest")
             }
         ) {
@@ -165,15 +183,16 @@ fun AppNavigation(applicationContext: Context?) {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "main") {
         composable("main") { MainScreen(navController) }
-        composable("mqttMessenger") { TestAppMqttMessenger() }
+        composable("mqttMessenger") { TestAppMqttMessenger(navController) }
         if (applicationContext != null) {
             composable("recordAudio") {
                 AudioRecordAndPlayback(applicationContext = applicationContext, navController)
             }
         }
         composable("speechToText") { StartSpeechToTextRecording(navController) }
-        composable("cameraTest") { CameraTestScreen() }
-        composable("ledTest") { LedTestScreen() }
+        composable("textToSpeech") { TextToSpeechScreen(navController) }
+        composable("cameraTest") { CameraTestScreen(navController) }
+        composable("ledTest") { LedTestScreen(navController) }
     }
 }
 

@@ -39,6 +39,7 @@ import androidx.compose.ui.unit.dp
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
+import com.example.mqtt_interface.ui_button.NavigateBackButton
 
 
 private val RECORD_AUDIO_PERMISSION_REQUEST_CODE = 123
@@ -89,6 +90,9 @@ fun StartSpeechToTextRecording(navController: NavController?) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(modifier = Modifier.height(350.dp))
+        if (navController != null) {
+            NavigateBackButton(navController)
+        }
         Text(
             text = recognizedText,
             modifier = Modifier
