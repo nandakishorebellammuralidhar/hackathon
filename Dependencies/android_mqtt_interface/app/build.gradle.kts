@@ -58,6 +58,10 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.org.eclipse.paho.client.mqttv3)
     implementation(libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.androidx.camera.lifecycle)
+    implementation(libs.androidx.camera.view)
+    implementation(libs.androidx.runner)
+    implementation(libs.androidx.runner)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     implementation(libs.androidx.navigation.compose.v240alpha10)
@@ -79,5 +83,11 @@ dependencies {
     implementation(libs.androidx.material)
     implementation(libs.ui.tooling.preview)
     implementation(libs.androidx.activity.compose.v130)
+
+
+    implementation(libs.cameraCamera2)
+    implementation(libs.cameraLifecycle)
+    implementation(libs.cameraView)
+
 
 }
