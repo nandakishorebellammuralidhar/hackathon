@@ -1,0 +1,94 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+/.idea/deploymentTargetSelector.xml
+/.idea/misc.xml
+
+.idea/*
+/.idea/*
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+
+# Ignore project build directories
+/build/
+/app/build/
+
+# Ignore Gradle files
+.gradle/
+/local.properties
+/.idea/
+/.idea/
+/build/
+/captures/
+/output/
+
+# Ignore IntelliJ project files
+*.iml
+*.ipr
+*.iws
+.gradle/
+/.idea/
+/build/
+
+# Ignore miscellaneous
+.DS_Store
+Thumbs.db
+
+# Ignore Android Studio files
+.android/
+/.idea/
+/app/build/
+/gradle/
+/local.properties
+*.bak
+*.log
+*.orig
+*.rej
+*.sublime-project
+*.sublime-workspace
+
+# Android
+local.properties
+.idea/caches
+.idea/libraries
+.idea/modules.xml
+.idea/workspace.xml
+.idea/codeStyles
+.idea/dictionaries
+.idea/inspectionProfiles
+.idea/gradle.xml
+.idea/encodings.xml
+.idea/assetWizardSettings.xml
+.idea/copyright/profiles_settings.xml
+.idea/deploymentTargetSelector.xml
+.idea/misc.xml
+.idea/scopes/scope_settings.xml
+.idea/vcs.xml
+*.keystore
+# Files for the Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+out/
+
+# Gradle generated files
+.build/
+build/
+# Maven generated files
+target/

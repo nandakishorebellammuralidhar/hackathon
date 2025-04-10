@@ -22,6 +22,8 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.mqtt_interface.ui_button.NavigateBackButton
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -36,8 +38,10 @@ import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.jsonObject
 
 
+const val WLED_IP = "192.168.18.170"
+
 @Composable
-fun LedTestScreen() {
+fun LedTestScreen(navController: NavController) {
     val coroutineScopeBlueButton = rememberCoroutineScope()
     val coroutineScopeRedButton = rememberCoroutineScope()
     val coroutineScopeGreenButton = rememberCoroutineScope()
@@ -180,13 +184,14 @@ fun LedTestScreen() {
                 fontWeight = FontWeight.Bold
             )
         }
+        NavigateBackButton(navController)
 
     }
 }
 
 
 suspend fun sendPostRequest(body: JsonObject) {
-    val url = "http://172.20.10.8/json/state"
+    val url = "http://$WLED_IP/json/state"
     val client = HttpClient(CIO) {
         install(ContentNegotiation) {
             json(Json {
@@ -218,9 +223,3 @@ fun parseJsonString(jsonString: String): JsonObject {
     return json.parseToJsonElement(jsonString).jsonObject
 }
 
-
-@Preview(showBackground = true)
-@Composable
-fun PreviewLedScreen() {
-    LedTestScreen()
-}
